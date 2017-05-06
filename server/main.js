@@ -7,7 +7,13 @@ Meteor.startup(() => {
 
 
 Meteor.methods({
-    logPosition(vehicleID, position) {
+
+    endTrip(vehicleID){
+        console.log("Request to end trip for " + vehicleID);
+        VStatus.remove({vehicleID:vehicleID});
+    },
+
+    logPosition(vehicleID, isOccupied, position) {
         console.log("---> " + vehicleID + " : " + position.latitude + ", " + position.longitude)
 
         try {
@@ -19,7 +25,7 @@ Meteor.methods({
                     accuracy: position.accuracy,
                     speed: position.speed,
                     heading: position.heading,
-                    isOccupied: true
+                    isOccupied: isOccupied
                 }
             });
             console.log("Result of post : " + JSON.stringify(result));

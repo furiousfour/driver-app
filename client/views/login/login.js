@@ -6,5 +6,7 @@ Template.Login.events({
         Session.set("vehicleID", vehicleID);
         Session.set("currentPage", "Home");
         Session.set("isLoggedIn", "true");
+        Session.set("currentStatus", false);
+
     }
 });

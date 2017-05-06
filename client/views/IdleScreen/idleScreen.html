@@ -1,0 +1,7 @@
+<template name="idleScreen">
+    Current State : idle
+    {{#if requestForTrip.available}}
+        {{requestForTrip.data.latitude}},{{requestForTrip.data.longitude}},{{requestForTrip.data.locationName}}
+        <button class="btn btn-primary startButton">Start</button>
+    {{/if}}
+</template>
