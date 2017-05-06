@@ -10,6 +10,7 @@ Template.idleScreen.helpers({
 Template.idleScreen.events({
     'click .startButton': function(event){
         event.preventDefault();
+        Meteor.call('startTrip', VStatus.find({vehicleID: Session.get("vehicleID")}));
         Session.set("currentStatus", true);
     }
 });
