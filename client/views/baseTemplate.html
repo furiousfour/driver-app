@@ -1,0 +1,6 @@
+<template name="baseTemplate">
+    {{#if isLoggedIn}}
+        {{> navbar}}
+    {{/if}}
+    {{> Template.dynamic template=whichOne}}
+</template>
