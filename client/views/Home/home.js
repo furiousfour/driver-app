@@ -21,19 +21,19 @@ Template.Home.events({
     '.click .signal1': function(event){
         event.preventDefault();
         Session.set("currentPosition", {latitude: 12.9568488, longitude:  80.2369307});
-        Meteor.call('logPosition', Session.get("vehicleID"), Session.get("isOccupied").toString(), pos);
+        Meteor.call('logPosition', Session.get("vehicleID"), Session.get("isOccupied").toString(), Session.get("currentPosition"));
     },
 
     '.click .signal2': function(event){
         event.preventDefault();
         Session.set("currentPosition", {latitude: 12.948812, longitude: 80.2387663});
-        Meteor.call('logPosition', Session.get("vehicleID"), Session.get("isOccupied").toString(), pos);
+        Meteor.call('logPosition', Session.get("vehicleID"), Session.get("isOccupied").toString(), Session.get("currentPosition"));
     },
 
     '.click .signal3': function(event){
         event.preventDefault();
         Session.set("currentPosition", {latitude: 12.948884, longitude: 80.2079273});
-        Meteor.call('logPosition', Session.get("vehicleID"), Session.get("isOccupied").toString(), pos);
+        Meteor.call('logPosition', Session.get("vehicleID"), Session.get("isOccupied").toString(), Session.get("currentPosition"));
     }
 
 
