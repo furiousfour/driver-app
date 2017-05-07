@@ -13,8 +13,7 @@ Meteor.methods({
         VStatus.remove({vehicleID:vehicleID});
         try {
             const result = HTTP.call('GET', 'http://13.228.23.221/api/un-assign-ambulance', {
-                params: {vehicle_id: vehicleID
-                }
+                params: {vehicle_id: vehicleID}
             });
             console.log("Result of post : " + JSON.stringify(result));
             return true;
@@ -25,13 +24,13 @@ Meteor.methods({
         }
     },
 
-    startTrip(tripData){
+    startTrip(vehicleID, tripData){
         console.log("Request to start the ambulance");
 
         try {
             const result = HTTP.call('GET', 'http://13.228.23.221/api/assign-ambulance', {
                 params: {
-                    vehicle_id: tripData.vehicleID,
+                    vehicle_id: vehicleID,
                     des_lat: tripData.latitude,
                     des_long: tripData.longitude,
                     des_name: tripData.locationName

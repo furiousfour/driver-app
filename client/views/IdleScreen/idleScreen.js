@@ -12,6 +12,6 @@ Template.idleScreen.events({
         event.preventDefault();
         Session.set("currentStatus", true);
         Session.set('isOccupied', true);
-        Meteor.call('startTrip', VStatus.findOne({vehicleID: Session.get("vehicleID")}));
+        Meteor.call('startTrip', Session.get("vehicleID"), VStatus.findOne({vehicleID: Session.get("vehicleID")}));
     }
 });
