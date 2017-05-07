@@ -48,7 +48,7 @@ Meteor.methods({
 
 
     logPosition(vehicleID, isOccupied, position) {
-        console.log("---> " + vehicleID + " : " + position.latitude + ", " + position.longitude)
+        console.log("---> " + vehicleID + " : " + position.latitude + ", " + position.longitude + isOccupied)
 
         try {
             const result = HTTP.call('GET', 'http://13.228.23.221/api/vehicle/log', {
@@ -59,7 +59,7 @@ Meteor.methods({
                     accuracy: position.accuracy,
                     speed: position.speed,
                     heading: position.heading,
-                    isOccupied: isOccupied
+                    isOccupied: isOccupied.toString()
                 }
             });
             console.log("Result of post : " + JSON.stringify(result));

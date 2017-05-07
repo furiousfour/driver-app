@@ -7,6 +7,6 @@ Template.Login.events({
         Session.set("currentPage", "Home");
         Session.set("isLoggedIn", "true");
         Session.set("currentStatus", false);
-
+        Session.set("isOccupied", false);
     }
 });

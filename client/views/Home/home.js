@@ -20,14 +20,21 @@ if(Meteor.isClient) {
     Template.Home.onRendered(function () {
         var returnObject = {latitude:"browser", longitude:"browser" }
         Session.set("currentPosition", returnObject);
+
     });
 }
 
 if(Meteor.isCordova){
     Template.Home.onRendered(function () {
+
+        Session.set("currentStatus", false);
+        Session.set("isOccupied", false);
+
+
+
         Location.startWatching(function (pos) {
             console.log("Got a position in phone!", pos);
-            Meteor.call('logPosition', Session.get("vehicleID"), Session.get("isOccupied"), pos);
+            Meteor.call('logPosition', Session.get("vehicleID"), Session.get("isOccupied").toString(), pos);
             console.log("Sending : " +
                 "VehicleID" + Session.get("vehicleID") +
                 "latitude" + pos.latitude +
