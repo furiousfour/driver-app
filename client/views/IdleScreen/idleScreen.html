@@ -1,12 +1,15 @@
 <template name="idleScreen">
 
-<div class="textBox">
     {{#if requestForTrip.available}}
-        <h1>Emergency</h1>
-        <button class="btn btn-primary btn-large startButton">Let's Go</button>
+        <div class="alertBox demo">
+            <img src="/images/maps.png" height="300px" width="300px">
+            <h1>Emergency</h1>
+            <button class="btn btn-primary btn-large startButton">Let's Go</button>
+        </div>
     {{else}}
-        <h1>All Good</h1>
+        <div class="textBox">
+            <h1>All Good</h1>
+        </div>
     {{/if}}
-</div>
 
 </template>
