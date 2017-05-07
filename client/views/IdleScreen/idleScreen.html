@@ -1,10 +1,12 @@
 <template name="idleScreen">
-    Current State : idle
 
+<div class="textBox">
     {{#if requestForTrip.available}}
-        <button class="btn btn-primary startButton">Start</button>
+        <h1>Emergency</h1>
+        <button class="btn btn-primary btn-large startButton">Let's Go</button>
+    {{else}}
+        <h1>All Good</h1>
     {{/if}}
-
-
+</div>
 
 </template>

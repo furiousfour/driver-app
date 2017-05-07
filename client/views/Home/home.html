@@ -1,11 +1,10 @@
 <template name="Home">
-    The current position is : {{getCurrentPosition.latitude}}, {{getCurrentPosition.longitude}}
-    {{#if isOccupied}}
-        <button class="btn btn-primary doneButton">Done</button>
-    {{else}}
-        {{> idleScreen}}
-    {{/if}}
-
-
-
+    <div class="container">
+        <div class="well well-sm">The current position is : {{getCurrentPosition.latitude}}, {{getCurrentPosition.longitude}}</div>
+            {{#if isOccupied}}
+                <button class="btn btn-primary doneButton">Done</button>
+            {{else}}
+                {{> idleScreen}}
+            {{/if}}
+        </div>
 </template>
