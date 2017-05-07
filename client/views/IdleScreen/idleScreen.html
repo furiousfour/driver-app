@@ -1,13 +1,10 @@
 <template name="idleScreen">
     Current State : idle
+
     {{#if requestForTrip.available}}
-        {{requestForTrip.data.latitude}},{{requestForTrip.data.longitude}},{{requestForTrip.data.locationName}}
         <button class="btn btn-primary startButton">Start</button>
-        <button class="btn btn-primary stopBroadcasting">Stop Broadcasting</button>
-        <button class="btn btn-primary signal1">Perungudi Signal</button>
-        <button class="btn btn-primary signal2">Thoraipakkam Signal</button>
-        <button class="btn btn-primary signal3">Kamakshi Hospital</button>
-
-
     {{/if}}
+
+
+
 </template>

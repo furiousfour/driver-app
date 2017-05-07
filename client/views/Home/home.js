@@ -14,12 +14,10 @@ Template.Home.events({
         Session.set("currentStatus", false);
         Session.set("isOccupied", false);
     },
-
     'click .stopBroadcasting': function(event){
         event.preventDefault();
         Location.stopWatching();
     },
-
     '.click .signal1': function(event){
         event.preventDefault();
         Session.set("currentPosition", {latitude: 12.9568488, longitude:  80.2369307});
@@ -37,6 +35,8 @@ Template.Home.events({
         Session.set("currentPosition", {latitude: 12.948884, longitude: 80.2079273});
         Meteor.call('logPosition', Session.get("vehicleID"), Session.get("isOccupied").toString(), pos);
     }
+
+
 });
 
 if(Meteor.isClient) {
