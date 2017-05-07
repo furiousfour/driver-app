@@ -12,6 +12,7 @@ Template.Home.events({
         event.preventDefault();
         Meteor.call('endTrip', Session.get("vehicleID"));
         Session.set("currentStatus", false);
+        Session.set("isOccupied", false);
     }
 });
 
@@ -31,7 +32,7 @@ if(Meteor.isCordova){
                 "VehicleID" + Session.get("vehicleID") +
                 "latitude" + pos.latitude +
                 "longitude" + pos.longitude +
-                "isOccupied" + Session.get("currentStatus")
+                "isOccupied" + Session.get("isOccupied")
             );
             Session.set("currentPosition", pos);
         }, function (err) {
